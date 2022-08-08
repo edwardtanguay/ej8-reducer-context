@@ -3,15 +3,15 @@ import { AppContext } from './AppContext';
 import './App.scss';
 
 function App() {
-	const { count, setCount } = useContext(AppContext);
+	const {state, dispatch } = useContext(AppContext);
 
 	return (
 		<div className="App">
 			<h1>Site with useContext/useReducer</h1>
-			<p>test: {count}</p>
+			<p>test: {state.count}</p>
 			<div className="buttonArea">
-				<button onClick={() => setCount(count - 1)}>-</button>
-				<button onClick={() => setCount(count + 1)}>+</button>
+				<button onClick={() => dispatch('decreaseCount')}>-</button>
+				<button onClick={() => dispatch('increaseCount')}>+</button>
 			</div>
 		</div>
 	);
