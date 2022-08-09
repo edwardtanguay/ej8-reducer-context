@@ -39,6 +39,12 @@ function App() {
 								<label>Plural</label>
 								<div className="value">{item.plural}</div>
 							</div>
+
+							<div className="buttonRow">
+								<button>Edit</button>
+								<button>Delete</button>
+								<button>Add</button>
+							</div>
 							
 						</fieldset>
 					);
