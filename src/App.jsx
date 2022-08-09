@@ -5,6 +5,11 @@ import './App.scss';
 function App() {
 	const { state, dispatch } = useContext(AppContext);
 
+	// const handleEditButton = (item) => {
+	// 	item.isEditing = !item.isEditing;
+	// 	setGermanNouns([...germanNouns]);
+	// }
+
 	return (
 		<div className="App">
 			<h1>Site with useContext/useReducer</h1>
@@ -29,23 +34,25 @@ function App() {
 								<label>Article</label>
 								<div className="value">{item.article}</div>
 							</div>
-							
+
 							<div className="row">
 								<label>Singular</label>
 								<div className="value">{item.singular}</div>
 							</div>
-							
+
 							<div className="row">
 								<label>Plural</label>
 								<div className="value">{item.plural}</div>
 							</div>
 
 							<div className="buttonRow">
-								<button>Edit</button>
+								{item.isEditing && <span>Please edit...</span>}
+								<button onClick={() => dispatch({type: 'toggleEditStatus', payload: item})}>
+									Edit
+								</button>
 								<button>Delete</button>
 								<button>Add</button>
 							</div>
-							
 						</fieldset>
 					);
 				})}

@@ -20,6 +20,10 @@ function reducer(state, action) {
 		case 'loadGermanNouns':
 			_state.germanNouns = action.payload;
 			break;
+		case 'toggleEditStatus':
+		const item = action.payload;
+		item.isEditing = !item.isEditing;
+		// setGermanNouns([...germanNouns]);
 	}
 	return _state;
 }
@@ -30,6 +34,9 @@ export const AppProvider = ({ children }) => {
 	useEffect(() => {
 		(async () => {
 			const _germanNouns = ((await axios.get('http://localhost:4555/germanNouns')).data);
+			_germanNouns.forEach(noun => {
+				noun.isEditing = false;
+			})
 			dispatch({ type: 'loadGermanNouns', payload: _germanNouns });
 		})();
 	}, []);
