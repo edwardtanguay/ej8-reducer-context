@@ -9,7 +9,7 @@ function App() {
 		<div className="App">
 			<h1>Site with useContext/useReducer</h1>
 			<p>test: {state.count}</p>
-			<div className="buttonArea">
+			<div className="countArea">
 				<button onClick={() => dispatch({ type: 'decreaseCount' })}>
 					-
 				</button>
