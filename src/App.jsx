@@ -22,9 +22,25 @@ function App() {
 			<div className="germanNounArea">
 				{state.germanNouns.map((item) => {
 					return (
-						<div className="germanNoun" key={item.id}>
-							{item.singular}
-						</div>
+						<fieldset className="germanNoun" key={item.id}>
+							<legend>ID: {item.id}</legend>
+
+							<div className="row">
+								<label>Article</label>
+								<div className="value">{item.article}</div>
+							</div>
+							
+							<div className="row">
+								<label>Singular</label>
+								<div className="value">{item.singular}</div>
+							</div>
+							
+							<div className="row">
+								<label>Plural</label>
+								<div className="value">{item.plural}</div>
+							</div>
+							
+						</fieldset>
 					);
 				})}
 			</div>
