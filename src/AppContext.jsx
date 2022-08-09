@@ -21,9 +21,9 @@ function reducer(state, action) {
 			_state.germanNouns = action.payload;
 			break;
 		case 'toggleEditStatus':
-		const item = action.payload;
-		item.isEditing = !item.isEditing;
-		// setGermanNouns([...germanNouns]);
+			const item = action.payload;
+			item.isEditing = !item.isEditing;
+			item.message = item.isEditing ? 'Editing item...' : '';
 	}
 	return _state;
 }
