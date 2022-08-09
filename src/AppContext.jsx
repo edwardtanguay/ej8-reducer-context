@@ -10,6 +10,9 @@ const initialState = {
 
 function reducer(state, action) {
 	const _state = { ...state };
+	let item = null;
+	let property = null;
+	let value = null;
 	switch (action.type) {
 		case 'increaseCount':
 			_state.count++;
@@ -21,9 +24,17 @@ function reducer(state, action) {
 			_state.germanNouns = action.payload;
 			break;
 		case 'toggleEditStatus':
-			const item = action.payload;
+			item = action.payload;
 			item.isEditing = !item.isEditing;
 			item.message = item.isEditing ? 'Editing item...' : '';
+			break;
+		case 'changeItemRowValue':
+			item = action.payload.item;
+			property = action.payload.property;
+			value = action.payload.value;
+			item[property] = value;
+			break;
+
 	}
 	return _state;
 }
