@@ -51,6 +51,16 @@ function reducer(state, action) {
 			item.isEditing = false;
 			item.message = '';
 			break;
+		case 'handleFailedSave':
+			item = action.payload.item;
+			originalItem = item.originalItem;
+
+			item.isEditing = false;
+			item.message = 'save failed';
+			item.article = originalItem.article;
+			item.singular = originalItem.singular;
+			item.plural = originalItem.plural;
+			break;
 	}
 	return _state;
 }
@@ -89,10 +99,19 @@ export const AppProvider = ({ children }) => {
 					`http://localhost:4555/germanNouns/${item.id}`,
 					backendItem
 				);
-				
+				if ([200, 201].includes(response.status)) {
+					dispatchCore(action);
+				} else {
+					dispatchCore({
+						type: 'handleFailedSave',
+						payload: { item },
+					});
+				}
+				break;
+			default:
+				dispatchCore(action);
 				break;
 		}
-		dispatchCore(action);
 	};
 
 	return (
