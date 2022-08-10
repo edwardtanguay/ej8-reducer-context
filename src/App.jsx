@@ -2,14 +2,10 @@ import { useContext } from 'react';
 import { AppContext } from './AppContext';
 import { GermanNounFormRow } from './components/GermanNounFormRow';
 import './App.scss';
+import { ItemButtonArea } from './components/ItemButtonArea';
 
 function App() {
 	const { state, dispatch } = useContext(AppContext);
-
-	// const handleEditButton = (item) => {
-	// 	item.isEditing = !item.isEditing;
-	// 	setGermanNouns([...germanNouns]);
-	// }
 
 	return (
 		<div className="App">
@@ -51,20 +47,8 @@ function App() {
 
 							<div className="buttonRow">
 								<div className="message">{item.message}</div>
-								<div className="buttonArea">
-									<button
-										onClick={() =>
-											dispatch({
-												type: 'toggleEditStatus',
-												payload: item,
-											})
-										}
-									>
-										Edit
-									</button>
-									<button>Delete</button>
-									<button>Add</button>
-								</div>
+
+								<ItemButtonArea dispatch={dispatch} item={item} />
 							</div>
 						</fieldset>
 					);

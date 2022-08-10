@@ -1,8 +1,12 @@
 - x get edit button to work
 - x create Row component and pass parameters
 -  .. when edit button clicked
-	- .. show input fields, hide text fields
-	- hide delete/add buttons
-	- show clear/save buttons
+	- x show input fields, hide text fields
+	- x hide edit/delete/add buttons
+	- .. show clear/save buttons
 	- style message
 
+
+
+
+- enable only one item to be edited/delete/added at one time

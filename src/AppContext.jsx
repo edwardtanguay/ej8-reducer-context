@@ -5,7 +5,7 @@ export const AppContext = createContext();
 
 const initialState = {
 	count: 0,
-	germanNouns: ['nnn']
+	germanNouns: ['nnn'],
 };
 
 function reducer(state, action) {
