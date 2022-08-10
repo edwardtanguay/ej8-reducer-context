@@ -56,7 +56,7 @@ function reducer(state, action) {
 }
 
 export const AppProvider = ({ children }) => {
-	const [state, dispatch] = useReducer(reducer, initialState);
+	const [state, dispatchCore] = useReducer(reducer, initialState);
 
 	useEffect(() => {
 		(async () => {
@@ -66,11 +66,20 @@ export const AppProvider = ({ children }) => {
 			_germanNouns.forEach((noun) => {
 				noun.isEditing = false;
 				noun.message = '';
-				noun.originalItem = {...noun}
+				noun.originalItem = { ...noun };
 			});
-			dispatch({ type: 'loadGermanNouns', payload: _germanNouns });
+			dispatchCore({ type: 'loadGermanNouns', payload: _germanNouns });
 		})();
 	}, []);
+
+	const dispatch = async (action) => {
+		switch (action.type) {
+			case 'saveItem':
+				console.log('api call...');
+				break;
+		}
+		dispatchCore(action);
+	};
 
 	return (
 		<AppContext.Provider
