@@ -6,7 +6,7 @@
 	- x show clear/save buttons
 - x handle clear button
 - x solve key error 
-- .. handle save button
-- url as variable
+- x handle save button
+- .. url as variable
 
 - enable only one item to be edited/delete/added at one time
