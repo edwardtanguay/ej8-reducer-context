@@ -73,9 +73,23 @@ export const AppProvider = ({ children }) => {
 	}, []);
 
 	const dispatch = async (action) => {
+		const item = action.payload.item;
+		let backendItem = {};
+		if (item) {
+			backendItem = {
+				id: item.id,
+				article: item.article,
+				singular: item.singular,
+				plural: item.plural,
+			};
+		}
 		switch (action.type) {
 			case 'saveItem':
-				console.log('api call...');
+				const response = await axios.put(
+					`http://localhost:4555/germanNouns/${item.id}`,
+					backendItem
+				);
+				
 				break;
 		}
 		dispatchCore(action);
