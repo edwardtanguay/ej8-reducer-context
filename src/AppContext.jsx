@@ -34,7 +34,11 @@ function reducer(state, action) {
 			value = action.payload.value;
 			item[property] = value;
 			break;
-
+		case 'cancelEditStatus':
+			item = action.payload.item;
+			item.isEditing = false;
+			item.message = '';
+			break;
 	}
 	return _state;
 }
@@ -44,17 +48,25 @@ export const AppProvider = ({ children }) => {
 
 	useEffect(() => {
 		(async () => {
-			const _germanNouns = ((await axios.get('http://localhost:4555/germanNouns')).data);
-			_germanNouns.forEach(noun => {
+			const _germanNouns = (
+				await axios.get('http://localhost:4555/germanNouns')
+			).data;
+			_germanNouns.forEach((noun) => {
 				noun.isEditing = false;
 				noun.message = '';
-			})
+			});
 			dispatch({ type: 'loadGermanNouns', payload: _germanNouns });
 		})();
 	}, []);
 
-	return <AppContext.Provider value={{
-		state,
-		dispatch
-	}}>{children}</AppContext.Provider>;
+	return (
+		<AppContext.Provider
+			value={{
+				state,
+				dispatch,
+			}}
+		>
+			{children}
+		</AppContext.Provider>
+	);
 };
