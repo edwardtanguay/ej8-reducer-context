@@ -4,10 +4,10 @@
 	- x show input fields, hide text fields
 	- x hide edit/delete/add buttons
 	- x show clear/save buttons
-- .. handle clear button
+- x handle clear button
 
-- solve key error 
-
+- .. solve key error 
+- handle save button
 
 
 - enable only one item to be edited/delete/added at one time

@@ -24,7 +24,7 @@ function App() {
 			<div className="germanNounArea">
 				{state.germanNouns.map((item) => {
 					return (
-						<fieldset className="germanNoun" key={item.id}>
+						<fieldset className="germanNoun" key={String(item.id)}>
 							<legend>ID: {item.id}</legend>
 
 							<GermanNounFormRow
