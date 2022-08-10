@@ -14,6 +14,7 @@ function reducer(state, action) {
 	let property = null;
 	let value = null;
 	let originalItem = null;
+	let message = null;
 	switch (action.type) {
 		case 'increaseCount':
 			_state.count++;
@@ -54,9 +55,10 @@ function reducer(state, action) {
 		case 'handleFailedSave':
 			item = action.payload.item;
 			originalItem = item.originalItem;
+			message = action.payload.message;
 
 			item.isEditing = false;
-			item.message = 'save failed';
+			item.message = message;
 			item.article = originalItem.article;
 			item.singular = originalItem.singular;
 			item.plural = originalItem.plural;
@@ -95,16 +97,26 @@ export const AppProvider = ({ children }) => {
 		}
 		switch (action.type) {
 			case 'saveItem':
-				const response = await axios.put(
-					`http://localhost:4555/germanNouns/${item.id}`,
-					backendItem
-				);
-				if ([200, 201].includes(response.status)) {
-					dispatchCore(action);
-				} else {
+				try {
+					const response = await axios.put(
+						`http://localhost:4555/germanNouns/${item.id}`,
+						backendItem
+					);
+					if ([200, 201].includes(response.status)) {
+						dispatchCore(action);
+					} else {
+						dispatchCore({
+							type: 'handleFailedSave',
+							payload: {
+								item,
+								message: `API Error: ${response.status}`,
+							},
+						});
+					}
+				} catch (err) {
 					dispatchCore({
 						type: 'handleFailedSave',
-						payload: { item },
+						payload: { item, message: `Error: ${err.message}` },
 					});
 				}
 				break;
