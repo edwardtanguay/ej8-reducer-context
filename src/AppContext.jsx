@@ -25,10 +25,10 @@ function reducer(state, action) {
 			_state.count--;
 			break;
 		case 'loadGermanNouns':
-			_state.germanNouns = action.payload;
+			_state.germanNouns = action.payload.germanNouns;
 			break;
 		case 'toggleEditStatus':
-			item = action.payload;
+			item = action.payload.item;
 			item.isEditing = !item.isEditing;
 			item.message = item.isEditing ? 'Editing item...' : '';
 			break;
@@ -82,7 +82,7 @@ export const AppProvider = ({ children }) => {
 				noun.message = '';
 				noun.originalItem = { ...noun };
 			});
-			dispatchCore({ type: 'loadGermanNouns', payload: _germanNouns });
+			dispatchCore({ type: 'loadGermanNouns', payload: { germanNouns: _germanNouns } });
 		})();
 	}, []);
 
