@@ -2,7 +2,7 @@
   "germanNouns": [
     {
       "id": 1,
-      "article": "die555666",
+      "article": "die",
       "singular": "Notiz",
       "plural": "die Notizen"
     },
@@ -83,6 +83,12 @@
       "singular": "666",
       "plural": "666",
       "id": 14
+    },
+    {
+      "article": "sdfsdfsdf",
+      "singular": "",
+      "plural": "",
+      "id": 15
     }
   ]
 }
