@@ -100,6 +100,11 @@ function reducer(state, action) {
 			break;
 		case 'clearAddBox':
 			_state.isAdding = false;
+			_state.addItem = {
+				article: '',
+				singular: '',
+				plural: '',
+			};
 			break;
 	}
 	return _state;
