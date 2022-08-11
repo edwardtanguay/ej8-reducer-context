@@ -1,94 +1,22 @@
 {
-  "germanNouns": [
-    {
-      "id": 1,
-      "article": "die",
-      "singular": "Notiz",
-      "plural": "die Notizen"
-    },
-    {
-      "id": 2,
-      "article": "das",
-      "singular": "Interface",
-      "plural": "die Interfaces"
-    },
-    {
-      "id": 3,
-      "article": "der",
-      "singular": "Workshop",
-      "plural": "die Workshops"
-    },
-    {
-      "id": 4,
-      "article": "der",
-      "singular": "Workshop",
-      "plural": "die Workshops"
-    },
-    {
-      "id": 5,
-      "article": "der",
-      "singular": "Workshop",
-      "plural": "die Workshops"
-    },
-    {
-      "id": 6,
-      "article": "der",
-      "singular": "Workshop",
-      "plural": "die Workshops"
-    },
-    {
-      "article": "aaa",
-      "singular": "sss",
-      "plural": "ppp",
-      "id": 7
-    },
-    {
-      "article": "asdfsadf",
-      "singular": "",
-      "plural": "",
-      "id": 8
-    },
-    {
-      "article": "11111",
-      "singular": "",
-      "plural": "",
-      "id": 9
-    },
-    {
-      "article": "222",
-      "singular": "222",
-      "plural": "222",
-      "id": 10
-    },
-    {
-      "article": "333",
-      "singular": "333",
-      "plural": "333",
-      "id": 11
-    },
-    {
-      "article": "444",
-      "singular": "444",
-      "plural": "444",
-      "id": 12
-    },
-    {
-      "article": "555",
-      "singular": "555",
-      "plural": "555",
-      "id": 13
-    },
-    {
-      "article": "666",
-      "singular": "666",
-      "plural": "666",
-      "id": 14
-    },
-    {
-      "article": "sdfsdfsdf",
-      "singular": "",
-      "plural": "",
-      "id": 15
-    }
-  ]
+	"germanNouns": [
+		{
+			"id": 1,
+			"article": "die",
+			"singular": "Notiz",
+			"plural": "die Notizen"
+		},
+		{
+			"id": 2,
+			"article": "das",
+			"singular": "Interface",
+			"plural": "die Interfaces"
+		},
+		{
+			"id": 3,
+			"article": "der",
+			"singular": "Workshop",
+			"plural": "die Workshops"
+		}
+	]
 }
