@@ -110,6 +110,12 @@ function reducer(state, action) {
 			item = action.payload.item;
 
 			_state.germanNouns.push(item);
+			_state.isAdding = false;
+			_state.addItem = {
+				article: '',
+				singular: '',
+				plural: '',
+			};
 			break;
 	}
 	return _state;
