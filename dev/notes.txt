@@ -10,4 +10,8 @@
 - x url as variable
 - .. handle delete button
 
+
+
+
+- fix loading flicker 
 - enable only one item to be edited/delete/added at one time
