@@ -35,6 +35,12 @@
       "article": "der",
       "singular": "Workshop",
       "plural": "die Workshops"
+    },
+    {
+      "article": "aaa",
+      "singular": "sss",
+      "plural": "ppp",
+      "id": 7
     }
   ]
 }

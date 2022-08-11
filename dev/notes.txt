@@ -11,8 +11,8 @@
 - x handle delete button
 - .. implement Add Button
 	- x on add click, scroll up and show dummy text
-	- .. handle clear button
-	
+	- x handle clear button
+	- .. make add item button change state
 
 
 

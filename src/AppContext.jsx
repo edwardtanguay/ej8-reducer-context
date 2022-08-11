@@ -106,6 +106,11 @@ function reducer(state, action) {
 				plural: '',
 			};
 			break;
+		case 'addItem':
+			item = action.payload.item;
+
+			_state.germanNouns.push(item);
+			break;
 	}
 	return _state;
 }

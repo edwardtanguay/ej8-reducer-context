@@ -44,7 +44,16 @@ export const ItemAddBox = () => {
 							>
 								Clear
 							</button>
-							<button>Add Item</button>
+							<button
+								onClick={() =>
+									dispatch({
+										type: 'addItem',
+										payload: { item },
+									})
+								}
+							>
+								Add Item
+							</button>
 						</div>
 					</div>
 				</fieldset>
