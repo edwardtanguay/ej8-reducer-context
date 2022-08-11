@@ -8,8 +8,9 @@
 - x solve key error 
 - x handle save button
 - x url as variable
-- .. handle delete button
-
+- x handle delete button
+- .. implement Add Button
+	- .. on add click, scroll up and show dummy text
 
 
 
