@@ -4,6 +4,7 @@ export const ItemButtonArea = ({ item, dispatch }) => {
 			top: 0,
 			behavior: 'smooth'
 		});
+		dispatch({type: 'turnAddingOn'})
 	}
 
 	return (
