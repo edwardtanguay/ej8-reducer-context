@@ -16,18 +16,21 @@ export const ItemAddBox = () => {
 						item={item}
 						label="Article"
 						variable="article"
+						isAdding={true}
 					/>
 
 					<GermanNounFormRow
 						item={item}
 						label="Singular"
 						variable="singular"
+						isAdding={true}
 					/>
 
 					<GermanNounFormRow
 						item={item}
 						label="Plural"
 						variable="plural"
+						isAdding={true}
 					/>
 
 					<div className="buttonRow">
