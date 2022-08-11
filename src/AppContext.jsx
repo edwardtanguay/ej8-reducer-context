@@ -123,6 +123,7 @@ export const AppProvider = ({ children }) => {
 		}
 		switch (action.type) {
 			case 'saveItem':
+				dispatchCore({type:'turnOnProcessingStatus', payload: {item}})
 				try {
 					const response = await axios.put(
 						`${baseUrl}/germanNouns/${item.id}`,
