@@ -13,9 +13,9 @@
 	- x on add click, scroll up and show dummy text
 	- x handle clear button
 	- x make add item button change state
+- x cursor in add box on click
 
+- .. fix loading flicker 
 
-
-- fix loading flicker 
 - enable only one item to be edited/delete/added at one time
 - error message on loading nouns
