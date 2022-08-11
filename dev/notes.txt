@@ -15,3 +15,4 @@
 
 - fix loading flicker 
 - enable only one item to be edited/delete/added at one time
+- error message on loading nouns
