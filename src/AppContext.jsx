@@ -224,8 +224,9 @@ export const AppProvider = ({ children }) => {
 						`${baseUrl}/germanNouns`,
 						addItem
 					);
+					console.log(response);
 					if ([200, 201].includes(response.status)) {
-						dispatchCore(action);
+						dispatchCore({ type: 'addItem', payload: { item: response.data } });
 					} else {
 						dispatchCore({
 							type: 'handleFailedSave',
