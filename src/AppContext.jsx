@@ -209,6 +209,39 @@ export const AppProvider = ({ children }) => {
 					});
 				}
 				break;
+			case 'addItem':
+				const addItem = {
+					article: item.article,
+					singular: item.singular,
+					plural: item.plural,
+				};
+				dispatchCore({
+					type: 'turnOnProcessingStatus',
+					payload: { item: addItem },
+				});
+				try {
+					const response = await axios.post(
+						`${baseUrl}/germanNouns`,
+						addItem
+					);
+					if ([200, 201].includes(response.status)) {
+						dispatchCore(action);
+					} else {
+						dispatchCore({
+							type: 'handleFailedSave',
+							payload: {
+								item,
+								message: `API Error: ${response.status}`,
+							},
+						});
+					}
+				} catch (err) {
+					dispatchCore({
+						type: 'handleFailedSave',
+						payload: { item, message: `Error: ${err.message}` },
+					});
+				}
+				break;
 			default:
 				dispatchCore(action);
 				break;
