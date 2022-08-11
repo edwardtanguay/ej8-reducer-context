@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { AppContext } from '../AppContext';
 
-export const GermanNounFormRow = ({ item, label, variable, isAdding }) => {
+export const GermanNounFormRow = ({ item, label, variable, isAdding, firstAddInput }) => {
 	const { state, dispatch } = useContext(AppContext);
 
 	return (
@@ -23,6 +23,7 @@ export const GermanNounFormRow = ({ item, label, variable, isAdding }) => {
 							},
 						})
 					}
+					ref={firstAddInput}
 				/>
 			)}
 		</div>

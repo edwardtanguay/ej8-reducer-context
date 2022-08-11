@@ -9,10 +9,10 @@
 - x handle save button
 - x url as variable
 - x handle delete button
-- .. implement Add Button
+- x implement Add Button
 	- x on add click, scroll up and show dummy text
 	- x handle clear button
-	- .. make add item button change state
+	- x make add item button change state
 
 
 

@@ -3,7 +3,7 @@ import { AppContext } from '../AppContext';
 import { GermanNounFormRow } from './GermanNounFormRow';
 
 export const ItemAddBox = () => {
-	const { state, dispatch } = useContext(AppContext);
+	const { state, dispatch, firstAddInput } = useContext(AppContext);
 
 	const item = state.addItem;
 
@@ -17,6 +17,7 @@ export const ItemAddBox = () => {
 						label="Article"
 						variable="article"
 						isAdding={true}
+						firstAddInput={firstAddInput}
 					/>
 
 					<GermanNounFormRow

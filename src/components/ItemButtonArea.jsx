@@ -1,11 +1,19 @@
-export const ItemButtonArea = ({ item, dispatch }) => {
+import { useContext } from 'react';
+import { AppContext } from '../AppContext';
+
+export const ItemButtonArea = ({ item }) => {
+	const { state, dispatch, firstAddInput } = useContext(AppContext);
+
 	const handleAddButtonClick = () => {
 		window.scrollTo({
 			top: 0,
-			behavior: 'smooth'
+			behavior: 'smooth',
 		});
-		dispatch({type: 'turnAddingOn'})
-	}
+		dispatch({ type: 'turnAddingOn' });
+		setTimeout(() => {
+			firstAddInput.current.focus();
+		}, 500);
+	};
 
 	return (
 		<>
@@ -37,7 +45,9 @@ export const ItemButtonArea = ({ item, dispatch }) => {
 						<button
 							disabled={item.isProcessing}
 							onClick={handleAddButtonClick}
-						>Add</button>
+						>
+							Add
+						</button>
 					</>
 				)}
 				{item.isEditing && (
