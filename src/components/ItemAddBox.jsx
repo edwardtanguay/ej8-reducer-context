@@ -37,7 +37,13 @@ export const ItemAddBox = () => {
 						<div className="message">{item.message}</div>
 
 						<div className="buttonArea">
-							<button>Clear</button>
+							<button
+								onClick={() =>
+									dispatch({ type: 'clearAddBox' })
+								}
+							>
+								Clear
+							</button>
 							<button>Add Item</button>
 						</div>
 					</div>
